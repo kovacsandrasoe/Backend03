@@ -29,10 +29,13 @@ namespace Backend03
 
             restaurants[0].Products.Add(products[0]);
             restaurants[0].Products.Add(products[1]);
+            restaurants[0].Products.Add(products[2]);
             restaurants[1].Products.Add(products[2]);
             restaurants[1].Products.Add(products[3]);
             restaurants[1].Products.Add(products[4]);
+            restaurants[2].Products.Add(products[4]);
             restaurants[2].Products.Add(products[5]);
+
 
             ctx.Products.AddRange(products);
             ctx.Restaurants.AddRange(restaurants);

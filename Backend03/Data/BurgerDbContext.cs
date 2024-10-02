@@ -21,10 +21,15 @@ namespace Backend03.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.Entity<Restaurant>()
+            //    .HasMany(r => r.Products)
+            //    .WithOne(p => p.Restaurant)
+            //    .HasForeignKey(p => p.RestaurantId);
+
             modelBuilder.Entity<Restaurant>()
                 .HasMany(r => r.Products)
-                .WithOne(p => p.Restaurant)
-                .HasForeignKey(p => p.RestaurantId);
+                .WithMany(p => p.Restaurants);
+                
 
             base.OnModelCreating(modelBuilder);
         }

@@ -32,9 +32,11 @@ namespace Backend03.Models
 
         public string Size { get; set; }
 
-        public Restaurant Restaurant { get; set; }
+        //public Restaurant Restaurant { get; set; }
 
-        public int RestaurantId { get; set; }
+        //public int RestaurantId { get; set; }
 
+        public List<Restaurant> Restaurants { get; set; } 
+            = new List<Restaurant>();
     }
 }
