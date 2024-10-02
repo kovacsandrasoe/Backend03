@@ -8,9 +8,8 @@ namespace Backend03.Models
 {
     public class Restaurant
     {
-        public Restaurant(int id, string name)
+        public Restaurant(string name)
         {
-            Id = id;
             Name = name;
         }
 
