@@ -31,6 +31,7 @@ namespace Backend03.Data
 
         public BurgerDbContext()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
     }

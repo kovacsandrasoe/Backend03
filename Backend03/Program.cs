@@ -1,5 +1,6 @@
 ﻿using Backend03.Data;
 using Backend03.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend03
 {
@@ -33,11 +34,13 @@ namespace Backend03
             restaurants[1].Products.Add(products[4]);
             restaurants[2].Products.Add(products[5]);
 
-            //ctx.Products.AddRange(products);
-            //ctx.Restaurants.AddRange(restaurants);
-            //ctx.SaveChanges();
+            ctx.Products.AddRange(products);
+            ctx.Restaurants.AddRange(restaurants);
+            ctx.SaveChanges();
 
-            var res = ctx.Restaurants.ToList();
+            var res = ctx.Restaurants
+                .Include(t => t.Products).ToList();
+
             ;
         }
     }
