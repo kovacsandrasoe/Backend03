@@ -12,6 +12,7 @@ namespace Backend03.Data
     {
         public DbSet<Restaurant> Restaurants { get; set;}
         public DbSet<Product> Products { get; set; }
+        public DbSet<Worker> Workers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,10 +22,10 @@ namespace Backend03.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Restaurant>()
-            //    .HasMany(r => r.Products)
-            //    .WithOne(p => p.Restaurant)
-            //    .HasForeignKey(p => p.RestaurantId);
+            modelBuilder.Entity<Restaurant>()
+                .HasMany(r => r.Workers)
+                .WithOne(p => p.Restaurant)
+                .HasForeignKey(p => p.RestaurantId);
 
             modelBuilder.Entity<Restaurant>()
                 .HasMany(r => r.Products)
@@ -39,5 +40,8 @@ namespace Backend03.Data
             Database.EnsureDeleted();
             Database.EnsureCreated();
         }
+
+        //olvasni
+        //https://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx
     }
 }

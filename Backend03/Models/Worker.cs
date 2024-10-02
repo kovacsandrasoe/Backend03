@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Backend03.Models
 {
-    public class Restaurant
+    public class Worker
     {
-        public Restaurant(string name)
+        public Worker(string name)
         {
             Name = name;
         }
 
-        public Restaurant()
+        public Worker()
         {
-                
+            
         }
 
         [Key]
@@ -27,8 +27,10 @@ namespace Backend03.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        public List<Product> Products { get; set; } = new List<Product>();
+        public Restaurant Restaurant { get; set; }
 
-        public List<Worker> Workers { get; set; } = new List<Worker>();
+        public int RestaurantId { get; set; }
+
+        
     }
 }

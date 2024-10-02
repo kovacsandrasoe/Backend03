@@ -26,10 +26,12 @@ namespace Backend03.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [StringLength(100)]
         public string Name { get; set; }
 
         public int Price { get; set; }
 
+        [StringLength(100)]
         public string Size { get; set; }
 
         //public Restaurant Restaurant { get; set; }
