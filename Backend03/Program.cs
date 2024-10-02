@@ -59,6 +59,31 @@ namespace Backend03
                 .Include(t => t.Products).ToList();
 
             
+            var repo = new WorkerRepository(ctx);
+
+            //create
+            var paul = new Worker("Paul Newman");
+            paul.RestaurantId = 2;
+            repo.CreateWorker(paul);
+
+            //update
+            var upd = repo.GetWorkerById(1);
+            upd.Name = "Johnny Doe";
+            repo.UpdateWorker(upd);
+
+            //delete
+            repo.DeleteWorker(5);
+
+            //read
+            var names = repo.GetAllWorkers()
+                .Select(w => w.Name)
+                .ToList();
+
+            
+
+
+
+
         }
     }
 }
