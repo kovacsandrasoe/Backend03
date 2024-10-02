@@ -23,6 +23,6 @@ namespace Backend03.Models
 
         public string Name { get; set; }
 
-        public List<Product> Products { get; set; } 
+        public List<Product> Products { get; set; } = new List<Product>();
     }
 }
