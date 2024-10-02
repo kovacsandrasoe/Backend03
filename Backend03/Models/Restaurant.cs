@@ -8,6 +8,17 @@ namespace Backend03.Models
 {
     public class Restaurant
     {
+        public Restaurant(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public Restaurant()
+        {
+                
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
