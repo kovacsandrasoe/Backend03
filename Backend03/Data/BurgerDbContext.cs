@@ -19,6 +19,16 @@ namespace Backend03.Data
             base.OnConfiguring(optionsBuilder);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Restaurant>()
+                .HasMany(r => r.Products)
+                .WithOne(p => p.Restaurant)
+                .HasForeignKey(p => p.RestaurantId);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         public BurgerDbContext()
         {
             Database.EnsureCreated();

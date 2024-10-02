@@ -30,5 +30,7 @@ namespace Backend03.Models
 
         public Restaurant Restaurant { get; set; }
 
+        public int RestaurantId { get; set; }
+
     }
 }
